@@ -70,7 +70,7 @@ const sendmail = async (email) => {
     return { message: "mail sent successfully", matchString: randomString };
   } catch (error) {
     console.log(error);
-    return error;
+    return { message: error };
   }
   // const response = await transporter.sendMail(options, (error) => {
   //     error ? console.log(error) : console.log("mail sent");
