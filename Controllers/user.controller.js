@@ -1,6 +1,8 @@
 import User from "../Models/User.schema.js";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
+import dotenv from 'dotenv'
+dotenv.config();
 
 export const registerUser = async (req, res) => {
   try {
@@ -70,7 +72,7 @@ const sendmail = async (email) => {
     return { message: "mail sent successfully", matchString: randomString };
   } catch (error) {
     console.log(error);
-    return { message: error };
+    return error;
   }
   // const response = await transporter.sendMail(options, (error) => {
   //     error ? console.log(error) : console.log("mail sent");
