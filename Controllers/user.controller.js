@@ -47,7 +47,7 @@ export const loginUser = async (req, res) => {
 };
 
 const sendmail = async (email) => {
-  consolelog(process.env.PASS_KEY,process.env.email)
+  console.log(process.env.PASS_KEY,process.env.email)
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
