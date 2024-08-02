@@ -50,7 +50,6 @@ const sendmail = async (email) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      type:'API',
       user: process.env.email,
       pass: process.env.PASS_KEY,
     },
