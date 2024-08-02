@@ -51,7 +51,7 @@ const sendmail = async (email) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.email,
+      user: process.env.EMAIL,
       pass: process.env.PASS_KEY,
     },
   });
@@ -60,11 +60,11 @@ const sendmail = async (email) => {
   console.log(randomString);
 
   const options = {
-    from: process.env.email,
+    from: process.env.EMAIL,
     to: email,
     subject: "Password reset",
-    html: `<p>your OTP : <h3>${randomString}</h3>,Don't share with anyone.<p/>
-        <p>To Reset your password follow this link : <a href="http://localhost:5173/resetpassword">Reset Password<a/></p>`,
+    html: `<p>your OTP : <h3>${randomString}</h3> <span>,Don't share with anyone.</span></p>
+        <p>To Reset your password follow this link : <a href="https://password-reset-flow-client-devit.netlify.app/resetpassword">Reset Password</a></p>`,
   };
 
   try {
